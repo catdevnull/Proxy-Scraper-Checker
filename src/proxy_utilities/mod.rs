@@ -67,7 +67,7 @@ impl Ord for Proxy {
 
 impl Proxy {
     /// Returns the URL of the proxy.
-    fn url(&self) -> String {
+    pub fn url(&self) -> String {
         match self {
             Proxy::Http(host) => format!("http://{host}"),
             Proxy::Socks5(host) => format!("socks5://{host}"),
