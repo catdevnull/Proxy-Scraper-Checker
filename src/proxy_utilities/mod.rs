@@ -330,7 +330,7 @@ impl ProxyChecker {
     ///
     /// An error is returned if the [`reqwest::Client`] cannot be built, if the request fails,
     /// or if the HTTP response is an error status code.
-    async fn check_proxy(proxy: Proxy, url: String, timeout: u64) -> Result<Proxy> {
+    pub async fn check_proxy(proxy: Proxy, url: String, timeout: u64) -> Result<Proxy> {
         let client = reqwest::Client::builder()
             .proxy(reqwest::Proxy::all(proxy.url())?)
             .timeout(Duration::from_secs(timeout))
